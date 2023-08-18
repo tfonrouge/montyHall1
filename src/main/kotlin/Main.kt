@@ -14,9 +14,9 @@ fun main() {
     val resultChoiceSuccess = IntArray(2) { 0 }
     list.forEach { item ->
         val playerFirstGuess = Random.nextInt(BUCKET_SIZE)
-        val leftChoices = IntArray(BUCKET_SIZE) { it }.toMutableSet()
         val winnerChoice = item.indexOf(true)
         if (playerFirstGuess != winnerChoice) {
+            val leftChoices = IntArray(BUCKET_SIZE) { it }.toMutableSet()
             leftChoices.remove(winnerChoice)
             leftChoices.remove(playerFirstGuess)
             val dummyChoice = leftChoices.toList()[Random.nextInt(leftChoices.size)]
