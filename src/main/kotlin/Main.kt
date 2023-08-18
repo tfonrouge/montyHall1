@@ -26,6 +26,6 @@ fun main() {
             if (item[leftChoices.toList()[Random.nextInt(leftChoices.size)]]) ++resultChoiceSuccess[1]
         } else ++resultChoiceSuccess[0]
     }
-    println("secondChoiceSuccess 1 rate = ${resultChoiceSuccess[0] / LIMIT.toDouble() * 100}")
-    println("secondChoiceSuccess 2 rate = ${resultChoiceSuccess[1] / LIMIT.toDouble() * 100}")
+    println("resultChoiceSuccess 1 rate = ${resultChoiceSuccess[0] / LIMIT.toDouble() * 100}")
+    println("resultChoiceSuccess 2 rate = ${resultChoiceSuccess[1] / LIMIT.toDouble() * 100}")
 }
