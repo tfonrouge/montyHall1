@@ -4,12 +4,10 @@ const val LIMIT = 100000
 const val BUCKET_SIZE = 3
 
 fun main() {
-    val list = mutableListOf<BooleanArray>()
-    for (i in 0..<LIMIT) {
-        val winner = Random.nextInt(BUCKET_SIZE)
-        val item = BooleanArray(BUCKET_SIZE) { false }
-        item[winner] = true
-        list.add(item)
+    val list = Array(LIMIT) {
+        BooleanArray(BUCKET_SIZE) { false }.also {
+            it[Random.nextInt(BUCKET_SIZE)] = true
+        }
     }
     val resultChoiceSuccess = IntArray(2) { 0 }
     list.forEach { item ->
